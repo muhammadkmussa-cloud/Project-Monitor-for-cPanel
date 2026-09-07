@@ -1,0 +1,119 @@
+- generic [ref=f2e3]:
+  - main [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - generic [ref=f2e6]:
+        - complementary [ref=f2e7]:
+          - generic [ref=f2e8]:
+            - generic [ref=f2e9] [cursor=pointer]: Settings
+            - generic [ref=f2e14]:
+              - menuitem "Usage and plan" [ref=f2e287] [cursor=pointer]
+              - menuitem "Personal" [ref=f2e288] [cursor=pointer]
+              - menuitem "Users" [ref=f2e289] [cursor=pointer]
+              - menuitem "Roles" [ref=f2e290] [cursor=pointer]:
+                - generic [ref=f2e48]:
+                  - generic [ref=f2e49]: Roles
+                  - generic [ref=f2e50]: New
+              - menuitem "n8n API" [ref=f2e291] [cursor=pointer]
+              - menuitem "External Secrets" [ref=f2e292] [cursor=pointer]
+              - menuitem "Environments" [ref=f2e293] [cursor=pointer]
+              - menuitem "SSO" [ref=f2e294] [cursor=pointer]
+              - menuitem "Security & policies" [ref=f2e295] [cursor=pointer]
+              - menuitem "LDAP" [ref=f2e296] [cursor=pointer]
+              - menuitem "Log Streaming" [ref=f2e297] [cursor=pointer]
+              - menuitem "OpenTelemetry" [ref=f2e298] [cursor=pointer]
+              - menuitem "Community nodes" [ref=f2e299] [cursor=pointer]
+              - menuitem "Instance-level MCP" [ref=f2e300] [cursor=pointer]
+              - menuitem "Chat" [ref=f2e301] [cursor=pointer]:
+                - generic [ref=f2e153]:
+                  - generic [ref=f2e154]: Chat
+                  - generic [ref=f2e155]: Preview
+              - menuitem "AI Assistant" [ref=f2e302] [cursor=pointer]:
+                - generic [ref=f2e163]:
+                  - generic [ref=f2e164]: AI Assistant
+                  - generic [ref=f2e165]: Preview
+            - generic [ref=f2e166]: Version 2.35.7
+        - main [ref=f2e170]:
+          - generic [ref=f2e175]:
+            - generic [ref=f2e176]:
+              - heading "API" [level=1] [ref=f2e177]
+              - paragraph [ref=f2e178]:
+                - generic [ref=f2e180]:
+                  - text: Use your API key to control n8n programmatically. Try it in the
+                  - link "API playground ↗" [ref=f2e181] [cursor=pointer]:
+                    - /url: /api/v1/docs
+                  - text: ", or use the"
+                  - link "Webhook node ↗" [ref=f2e182] [cursor=pointer]:
+                    - /url: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/
+                  - text: if you only need to trigger workflows. You can learn more in the
+                  - link "documentation ↗" [ref=f2e183] [cursor=pointer]:
+                    - /url: https://docs.n8n.io/api
+                  - text: .
+            - generic [ref=f2e184]:
+              - generic [ref=f2e185]:
+                - tablist [ref=f2e187]:
+                  - tab "Mine 1" [selected] [ref=f2e303] [cursor=pointer]:
+                    - generic [ref=f2e190]: Mine
+                    - generic [ref=f2e191]: "1"
+                  - tab "All 1" [ref=f2e304] [cursor=pointer]:
+                    - generic [ref=f2e194]: All
+                    - generic [ref=f2e195]: "1"
+                - generic [ref=f2e196]:
+                  - textbox "Search" [ref=f2e204]
+                  - button "Create API key" [ref=f2e205] [cursor=pointer]
+              - table [ref=f2e211]:
+                - rowgroup [ref=f2e212]:
+                  - row [ref=f2e213]:
+                    - columnheader "Name" [ref=f2e214] [cursor=pointer]
+                    - columnheader "Scopes" [ref=f2e215] [cursor=pointer]
+                    - columnheader "Expiration" [ref=f2e216]
+                    - columnheader "Last used" [ref=f2e217] [cursor=pointer]
+                    - columnheader [ref=f2e218]
+                - rowgroup [ref=f2e219]:
+                  - row [ref=f2e220] [cursor=pointer]:
+                    - cell "opencode ******USig" [ref=f2e221]:
+                      - generic [ref=f2e222]:
+                        - generic: opencode
+                        - generic [ref=f2e225]: "******USig"
+                    - cell [ref=f2e226]:
+                      - button "87" [ref=f2e227]
+                    - cell "Never" [ref=f2e228]
+                    - cell "37 minutes ago" [ref=f2e230]
+                    - cell [ref=f2e232]:
+                      - button "Actions" [ref=f2e236]
+      - dialog [ref=f2e306]:
+        - generic [ref=f2e307]:
+          - generic [ref=f2e308]:
+            - heading "Edit API Key" [level=1] [ref=f2e311]
+            - button "Close this dialog" [ref=f2e312] [cursor=pointer]
+          - generic [ref=f2e316]:
+            - generic [ref=f2e319]:
+              - generic [ref=f2e320]:
+                - generic [ref=f2e321]: Label
+                - textbox "e.g Internal Project" [active] [ref=f2e328]: opencode
+              - generic [ref=f2e329]:
+                - generic [ref=f2e330]: Expiration
+                - generic [ref=f2e335]: The API key will never expire. It will remain active until it is revoked manually.
+              - generic [ref=f2e336]:
+                - generic [ref=f2e337]:
+                  - generic [ref=f2e338]: Scopes
+                  - radiogroup "Scopes" [ref=f2e343]:
+                    - generic [ref=f2e345] [cursor=pointer]:
+                      - radio "AllFull access to everything this instance offers." [checked] [ref=f2e346]
+                      - generic [ref=f2e348]:
+                        - generic [ref=f2e349]: All
+                        - generic [ref=f2e350]: Full access to everything this instance offers.
+                    - generic [ref=f2e352] [cursor=pointer]:
+                      - radio "Read onlyView workflows and data without making changes." [ref=f2e353]
+                      - generic [ref=f2e354]:
+                        - generic [ref=f2e355]: Read only
+                        - generic [ref=f2e356]: View workflows and data without making changes.
+                    - generic [ref=f2e358] [cursor=pointer]:
+                      - radio "CustomChoose exactly which scopes to grant." [ref=f2e359]
+                      - generic [ref=f2e360]:
+                        - generic [ref=f2e361]: Custom
+                        - generic [ref=f2e362]: Choose exactly which scopes to grant.
+                - button "87 of 87 scopes selected" [ref=f2e364] [cursor=pointer]
+            - generic [ref=f2e369]:
+              - button "Save" [ref=f2e370] [cursor=pointer]
+              - generic [ref=f2e373]: API key was created on Sun, Sep 6 2026
+  - complementary

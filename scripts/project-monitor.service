@@ -1,0 +1,15 @@
+[Unit]
+Description=Project Monitor Docker Compose
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/opt/project-monitor
+ExecStart=/usr/bin/docker compose -f docker-compose.production.yml up -d --remove-orphans
+ExecStop=/usr/bin/docker compose -f docker-compose.production.yml down
+TimeoutStartSec=300
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,275 @@
+{
+  "name": "Client Onboarding Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "client-onboarding",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const clientData = $input.first().json.body;\n\nreturn [{\n  json: {\n    client_name: clientData.client_name,\n    contact_email: clientData.contact_email,\n    company_name: clientData.company_name || '',\n    plan: clientData.plan || 'starter',\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "validate-input",
+      "name": "Validate Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.MONITORING_API_URL }}/api/v1/clients",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "client_name",
+              "value": "={{ $json.client_name }}"
+            },
+            {
+              "name": "contact_email",
+              "value": "={{ $json.contact_email }}"
+            },
+            {
+              "name": "company_name",
+              "value": "={{ $json.company_name }}"
+            },
+            {
+              "name": "plan",
+              "value": "={{ $json.plan }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "create-client",
+      "name": "Create Client",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.MONITORING_API_URL }}/api/v1/users",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "client_id",
+              "value": "={{ $json.client_id }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $json.contact_email }}"
+            },
+            {
+              "name": "name",
+              "value": "={{ $json.client_name }}"
+            },
+            {
+              "name": "role",
+              "value": "owner"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "create-owner-user",
+      "name": "Create Owner User",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        900,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.MONITORING_API_URL }}/api/v1/billing/invoices",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "client_id",
+              "value": "={{ $('Create Client').item.json.client_id }}"
+            },
+            {
+              "name": "plan",
+              "value": "={{ $('Create Client').item.json.plan }}"
+            },
+            {
+              "name": "billing_cycle",
+              "value": "monthly"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "create-first-invoice",
+      "name": "Create First Invoice",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        900,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.MONITORING_API_URL }}/api/v1/notifications/email/send",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "to",
+              "value": "={{ $json.contact_email }}"
+            },
+            {
+              "name": "subject",
+              "value": "Welcome to Project Monitor!"
+            },
+            {
+              "name": "html_content",
+              "value": "<h1>Welcome to Project Monitor!</h1><p>Thank you for signing up. Your account has been created.</p><p>Plan: {{ $('Create Client').item.json.plan }}</p><p>Get started by adding your first project.</p>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-welcome-email",
+      "name": "Send Welcome Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "status",
+              "value": "onboarding_complete"
+            },
+            {
+              "name": "client_id",
+              "value": "={{ $('Create Client').item.json.client_id }}"
+            },
+            {
+              "name": "user_id",
+              "value": "={{ $json.user_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "return-result",
+      "name": "Return Result",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1340,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Validate Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Input": {
+      "main": [
+        [
+          {
+            "node": "Create Client",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Client": {
+      "main": [
+        [
+          {
+            "node": "Create Owner User",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Owner User": {
+      "main": [
+        [
+          {
+            "node": "Create First Invoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create First Invoice": {
+      "main": [
+        [
+          {
+            "node": "Send Welcome Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Welcome Email": {
+      "main": [
+        [
+          {
+            "node": "Return Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "onboarding"
+    },
+    {
+      "name": "client-management"
+    }
+  ]
+}

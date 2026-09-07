@@ -1,0 +1,111 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: Project Monitor
+    - navigation [ref=e8]:
+      - link "Dashboard" [ref=e9] [cursor=pointer]:
+        - /url: /
+      - link "Projects" [ref=e15] [cursor=pointer]:
+        - /url: /projects
+      - link "Incidents" [ref=e18] [cursor=pointer]:
+        - /url: /incidents
+      - link "Analytics" [ref=e21] [cursor=pointer]:
+        - /url: /analytics
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+      - link "Settings" [ref=e30] [cursor=pointer]:
+        - /url: /settings
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: A
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Admin User
+          - paragraph [ref=e40]: admin@monitor.com
+      - button "Logout" [ref=e41] [cursor=pointer]
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - textbox "Search..." [ref=e52]
+      - button "3" [ref=e54] [cursor=pointer]
+    - main [ref=e59]:
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - heading "Projects" [level=1] [ref=e62]
+          - button "Add Project" [active] [ref=e63] [cursor=pointer]
+        - textbox "Search projects..." [ref=e71]
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e80]:
+              - heading "RBAC Test Project" [level=3] [ref=e81]
+              - paragraph [ref=e82]: test.example
+            - generic [ref=e83]:
+              - generic [ref=e84]: test.example
+              - generic [ref=e88]: php
+            - generic [ref=e91]:
+              - generic [ref=e92]: UNKNOWN
+              - button "Details" [ref=e93] [cursor=pointer]
+          - generic [ref=e97]:
+            - generic [ref=e104]:
+              - heading "Halaal Charitable Trust" [level=3] [ref=e105]
+              - paragraph [ref=e106]: halaalcharitabletrust.org
+            - generic [ref=e107]:
+              - generic [ref=e108]: halaalcharitabletrust.org
+              - generic [ref=e112]: php
+            - generic [ref=e115]:
+              - generic [ref=e116]: HEALTHY
+              - button "Details" [ref=e117] [cursor=pointer]
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - heading "Add New Project" [level=3] [ref=e126]
+            - button [ref=e127] [cursor=pointer]
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e133]: Project Name
+              - textbox "My cPanel Site" [ref=e134]
+            - generic [ref=e135]:
+              - generic [ref=e136]: Domain / URL
+              - textbox "example.com" [ref=e137]
+            - generic [ref=e138]:
+              - generic [ref=e139]: Health Check URL (optional)
+              - textbox "https://example.com/health" [ref=e140]
+            - generic [ref=e141]:
+              - paragraph [ref=e142]: SSH Access (for server stats/logs/git)
+              - generic [ref=e143]:
+                - generic [ref=e144]:
+                  - generic [ref=e145]: Server Host
+                  - textbox "server.example.com" [ref=e146]
+                - generic [ref=e147]:
+                  - generic [ref=e148]: SSH Port
+                  - spinbutton [ref=e149]: "22"
+                - generic [ref=e150]:
+                  - generic [ref=e151]: SSH Username
+                  - textbox "cpaneluser" [ref=e152]
+              - generic [ref=e153]:
+                - generic [ref=e154]: Project Path (e.g. /home/user/domains/site/public_html)
+                - textbox "/home/user/domains/site" [ref=e155]
+            - generic [ref=e156]:
+              - paragraph [ref=e157]: Connection & Monitoring
+              - generic [ref=e158]:
+                - generic [ref=e159]:
+                  - generic [ref=e160]: Connection Type
+                  - combobox [ref=e161]:
+                    - option "SSH" [selected]
+                    - option "SFTP"
+                - generic [ref=e162]:
+                  - generic [ref=e163]: Check Interval (seconds)
+                  - spinbutton [ref=e164]: "300"
+              - generic [ref=e165]:
+                - generic [ref=e166]: Monitoring enabled
+                - button [ref=e167] [cursor=pointer]
+            - generic [ref=e169]:
+              - generic [ref=e170]: Application Type
+              - combobox [ref=e171]:
+                - option "WordPress" [selected]
+                - option "PHP"
+                - option "Laravel"
+                - option "Node.js"
+                - option "Python"
+                - option "Static Site"
+                - option "API Service"
+                - option "Other"
+            - generic [ref=e172]:
+              - button "Cancel" [ref=e173] [cursor=pointer]
+              - button "Create Project" [ref=e174] [cursor=pointer]

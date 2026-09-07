@@ -1,0 +1,1 @@
+ALTER TABLE approvals ADD COLUMN IF NOT EXISTS review_hash TEXT;

@@ -1,0 +1,28 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: Project Monitor
+    - navigation [ref=e8]:
+      - link "Dashboard" [ref=e9] [cursor=pointer]:
+        - /url: /
+      - link "Projects" [ref=e15] [cursor=pointer]:
+        - /url: /projects
+      - link "Incidents" [ref=e18] [cursor=pointer]:
+        - /url: /incidents
+      - link "Analytics" [ref=e21] [cursor=pointer]:
+        - /url: /analytics
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+      - link "Settings" [ref=e30] [cursor=pointer]:
+        - /url: /settings
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: A
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Admin User
+          - paragraph [ref=e40]: admin@monitor.com
+      - button "Logout" [ref=e41] [cursor=pointer]
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - textbox "Search..." [ref=e52]
+      - button "3" [ref=e54] [cursor=pointer]
+    - main [ref=e59]

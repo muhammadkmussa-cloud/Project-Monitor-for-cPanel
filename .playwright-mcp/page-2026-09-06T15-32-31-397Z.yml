@@ -1,0 +1,47 @@
+- generic [ref=f8e3]:
+  - generic [ref=f8e5]:
+    - generic [ref=f8e6]: Project Monitor
+    - navigation [ref=f8e8]:
+      - link "Dashboard" [ref=f8e9] [cursor=pointer]:
+        - /url: /
+      - link "Projects" [active] [ref=f8e15] [cursor=pointer]:
+        - /url: /projects
+      - link "Incidents" [ref=f8e18] [cursor=pointer]:
+        - /url: /incidents
+      - link "Analytics" [ref=f8e21] [cursor=pointer]:
+        - /url: /analytics
+      - link "Clients" [ref=f8e24] [cursor=pointer]:
+        - /url: /clients
+      - link "Settings" [ref=f8e30] [cursor=pointer]:
+        - /url: /settings
+    - generic [ref=f8e35]:
+      - generic [ref=f8e36]:
+        - generic [ref=f8e37]: A
+        - generic [ref=f8e38]:
+          - paragraph [ref=f8e39]: Admin User
+          - paragraph [ref=f8e40]: admin@monitor.com
+      - button "Logout" [ref=f8e41] [cursor=pointer]
+  - generic [ref=f8e45]:
+    - generic [ref=f8e46]:
+      - textbox "Search..." [ref=f8e52]
+      - button "3" [ref=f8e54] [cursor=pointer]
+    - main [ref=f8e59]:
+      - generic [ref=f8e131]:
+        - generic [ref=f8e132]:
+          - heading "Projects" [level=1] [ref=f8e133]
+          - button "Add Project" [ref=f8e134] [cursor=pointer]
+        - generic [ref=f8e137]:
+          - textbox "Search projects..." [ref=f8e142]
+          - button "Filter" [ref=f8e143] [cursor=pointer]
+        - generic [ref=f8e147]:
+          - generic [ref=f8e148]:
+            - generic [ref=f8e154]:
+              - heading "My Website" [level=3] [ref=f8e155]
+              - paragraph [ref=f8e156]: example.com
+            - button [ref=f8e157] [cursor=pointer]
+          - generic [ref=f8e162]:
+            - generic [ref=f8e163]: No server configured
+            - generic [ref=f8e167]: other
+          - generic [ref=f8e170]:
+            - generic [ref=f8e171]: HEALTHY
+            - button "Details" [ref=f8e173] [cursor=pointer]

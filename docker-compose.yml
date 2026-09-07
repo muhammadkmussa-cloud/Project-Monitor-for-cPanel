@@ -1,0 +1,188 @@
+name: project_monitor
+
+services:
+  # ==================================================
+  # PostgreSQL Database
+  # ==================================================
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:25432:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-project_monitor}
+      POSTGRES_USER: ${POSTGRES_USER:-monitor_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-monitor_admin} -d ${POSTGRES_DB:-project_monitor}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"
+    networks:
+      - monitor-net
+
+  # ==================================================
+  # Redis Cache
+  # ==================================================
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:26379:6379"
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.5"
+    networks:
+      - monitor-net
+
+  # ==================================================
+  # Monitoring Agent Service (Python/FastAPI)
+  # ==================================================
+  monitoring-agent:
+    build:
+      context: ./monitoring-agent
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8000"
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-monitor_admin}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-project_monitor}
+      REDIS_URL: redis://redis:6379/0
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-chat}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
+      TELEGRAM_ENABLED: ${TELEGRAM_ENABLED:-true}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+      EMAIL_ENABLED: ${EMAIL_ENABLED:-true}
+      SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL:-}
+      SLACK_BOT_TOKEN: ${SLACK_BOT_TOKEN:-}
+      SLACK_ENABLED: ${SLACK_ENABLED:-true}
+      DATA_RETENTION_DAYS: ${DATA_RETENTION_DAYS:-90}
+      ARCHIVE_ENABLED: ${ARCHIVE_ENABLED:-true}
+      SSH_TIMEOUT: ${SSH_TIMEOUT:-30}
+      SSH_RETRY_ATTEMPTS: ${SSH_RETRY_ATTEMPTS:-3}
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET}
+      API_SECRET_KEY: ${API_SECRET_KEY:?Set API_SECRET_KEY}
+    volumes:
+      - backups:/app/backups
+      - /home/muhammad-mussa/.ssh:/keys:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"
+    networks:
+      - monitor-net
+
+  # ==================================================
+  # Frontend Dashboard
+  # ==================================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3005:3000"
+    depends_on:
+      monitoring-agent:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.5"
+    networks:
+      - monitor-net
+
+  # ==================================================
+  # n8n Workflow Automation
+  # ==================================================
+  n8n:
+    image: n8nio/n8n:2.35.7
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - MONITORING_API_URL=http://monitoring-agent:8000
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
+      - NODE_OPTIONS=--max-old-space-size=1024
+    volumes:
+      - n8n_data:/home/node/.n8n
+    depends_on:
+      monitoring-agent:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5678/healthz || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: "2.0"
+    networks:
+      - monitor-net
+
+volumes:
+  pgdata:
+    external: true
+    name: project_monitor_pgdata
+  redisdata:
+    external: true
+    name: project_monitor_redisdata
+  backups:
+    external: true
+    name: project_monitor_backups
+  n8n_data:
+    external: true
+    name: project_monitor_n8n_data
+
+networks:
+  monitor-net:
+    driver: bridge

@@ -1,0 +1,1 @@
+Historical examples only. These workflows are not maintained or active. Use ../workflows/unified_monitoring.json and its encrypted HTTP Header Auth credential. Embedded API-key headers have been removed.

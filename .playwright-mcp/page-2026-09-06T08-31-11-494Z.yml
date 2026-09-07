@@ -1,0 +1,114 @@
+- generic [ref=f2e3]:
+  - main [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - generic [ref=f2e6]:
+        - complementary [ref=f2e7]:
+          - generic [ref=f2e8]:
+            - generic [ref=f2e9] [cursor=pointer]: Settings
+            - generic [ref=f2e14]:
+              - menuitem "Usage and plan" [ref=f2e287] [cursor=pointer]
+              - menuitem "Personal" [ref=f2e288] [cursor=pointer]
+              - menuitem "Users" [ref=f2e289] [cursor=pointer]
+              - menuitem "Roles" [ref=f2e290] [cursor=pointer]:
+                - generic [ref=f2e48]:
+                  - generic [ref=f2e49]: Roles
+                  - generic [ref=f2e50]: New
+              - menuitem "n8n API" [ref=f2e291] [cursor=pointer]
+              - menuitem "External Secrets" [ref=f2e292] [cursor=pointer]
+              - menuitem "Environments" [ref=f2e293] [cursor=pointer]
+              - menuitem "SSO" [ref=f2e294] [cursor=pointer]
+              - menuitem "Security & policies" [ref=f2e295] [cursor=pointer]
+              - menuitem "LDAP" [ref=f2e296] [cursor=pointer]
+              - menuitem "Log Streaming" [ref=f2e297] [cursor=pointer]
+              - menuitem "OpenTelemetry" [ref=f2e298] [cursor=pointer]
+              - menuitem "Community nodes" [ref=f2e299] [cursor=pointer]
+              - menuitem "Instance-level MCP" [ref=f2e300] [cursor=pointer]
+              - menuitem "Chat" [ref=f2e301] [cursor=pointer]:
+                - generic [ref=f2e153]:
+                  - generic [ref=f2e154]: Chat
+                  - generic [ref=f2e155]: Preview
+              - menuitem "AI Assistant" [ref=f2e302] [cursor=pointer]:
+                - generic [ref=f2e163]:
+                  - generic [ref=f2e164]: AI Assistant
+                  - generic [ref=f2e165]: Preview
+            - generic [ref=f2e166]: Version 2.35.7
+        - main [ref=f2e170]:
+          - generic [ref=f2e175]:
+            - generic [ref=f2e176]:
+              - heading "API" [level=1] [ref=f2e177]
+              - paragraph [ref=f2e178]:
+                - generic [ref=f2e180]:
+                  - text: Use your API key to control n8n programmatically. Try it in the
+                  - link "API playground ↗" [ref=f2e181] [cursor=pointer]:
+                    - /url: /api/v1/docs
+                  - text: ", or use the"
+                  - link "Webhook node ↗" [ref=f2e182] [cursor=pointer]:
+                    - /url: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/
+                  - text: if you only need to trigger workflows. You can learn more in the
+                  - link "documentation ↗" [ref=f2e183] [cursor=pointer]:
+                    - /url: https://docs.n8n.io/api
+                  - text: .
+            - generic [ref=f2e184]:
+              - generic [ref=f2e185]:
+                - tablist [ref=f2e187]:
+                  - tab "Mine 2" [selected] [ref=f2e453] [cursor=pointer]:
+                    - generic [ref=f2e190]: Mine
+                    - generic [ref=f2e191]: "2"
+                  - tab "All 2" [ref=f2e454] [cursor=pointer]:
+                    - generic [ref=f2e194]: All
+                    - generic [ref=f2e195]: "2"
+                - generic [ref=f2e196]:
+                  - textbox "Search" [ref=f2e204]
+                  - button "Create API key" [ref=f2e205] [cursor=pointer]
+              - table [ref=f2e211]:
+                - rowgroup [ref=f2e212]:
+                  - row [ref=f2e213]:
+                    - columnheader "Name" [ref=f2e214] [cursor=pointer]
+                    - columnheader "Scopes" [ref=f2e215] [cursor=pointer]
+                    - columnheader "Expiration" [ref=f2e216]
+                    - columnheader "Last used" [ref=f2e217] [cursor=pointer]
+                    - columnheader [ref=f2e218]
+                - rowgroup [ref=f2e219]:
+                  - row [ref=f2e455] [cursor=pointer]:
+                    - cell "project-monitor ******flXo" [ref=f2e456]:
+                      - generic [ref=f2e457]:
+                        - generic: project-monitor
+                        - generic [ref=f2e460]: "******flXo"
+                    - cell [ref=f2e461]:
+                      - button "87" [ref=f2e462]
+                    - cell "6 Oct 2026" [ref=f2e463]
+                    - cell "Never" [ref=f2e465]
+                    - cell [ref=f2e467]:
+                      - button "Actions" [ref=f2e471]
+                  - row [ref=f2e478] [cursor=pointer]:
+                    - cell "opencode ******USig" [ref=f2e221]:
+                      - generic [ref=f2e222]:
+                        - generic: opencode
+                        - generic [ref=f2e225]: "******USig"
+                    - cell [ref=f2e226]:
+                      - button "87" [ref=f2e227]
+                    - cell "Never" [ref=f2e228]
+                    - cell "38 minutes ago" [ref=f2e479]
+                    - cell [ref=f2e232]:
+                      - button "Actions" [ref=f2e236]
+      - dialog [ref=f2e375]:
+        - generic [ref=f2e376]:
+          - generic [ref=f2e377]:
+            - heading "API key created successfully" [level=1] [ref=f2e480]
+            - button "Close this dialog" [ref=f2e381] [cursor=pointer]
+          - generic [ref=f2e385]:
+            - generic [ref=f2e481]:
+              - generic [ref=f2e482]: Make sure to copy your API key now as you will not be able to see this again.
+              - generic [ref=f2e483]:
+                - textbox [ref=f2e485]: eyJhbGciOiJIUzI1NiIsInR5cCI6Ik...7gahjcPDmk_x97kXEJzoJMY7btflXo
+                - button "Copied to clipboard" [active] [ref=f2e506] [cursor=pointer]
+            - button "Done" [ref=f2e494] [cursor=pointer]
+  - complementary
+  - alert [ref=f2e497]:
+    - generic [ref=f2e501]:
+      - heading "API Key created" [level=2] [ref=f2e502]
+      - generic [ref=f2e503] [cursor=pointer]
+  - alert [ref=f2e509]:
+    - generic [ref=f2e513]:
+      - heading "API Key copied to clipboard" [level=2] [ref=f2e514]
+      - generic [ref=f2e515] [cursor=pointer]

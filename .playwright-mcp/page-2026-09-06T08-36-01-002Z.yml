@@ -1,0 +1,33 @@
+- generic [ref=f4e3]:
+  - main [ref=f4e4]:
+    - generic [ref=f4e80]:
+      - complementary [ref=f4e81]:
+        - generic [ref=f4e82]:
+          - generic [ref=f4e84]:
+            - menubar [ref=f4e85]:
+              - menuitem [ref=f4e86]:
+                - button "Add new item" [ref=f4e88] [cursor=pointer]
+            - button "Open command palette" [ref=f4e93] [cursor=pointer]
+            - button "Toggle sidebar" [ref=f4e100] [cursor=pointer]
+          - generic [ref=f4e110]:
+            - menuitem "AI Assistant" [ref=f4e113] [cursor=pointer]
+            - menuitem "Overview" [ref=f4e121] [cursor=pointer]
+          - generic [ref=f4e128]:
+            - menuitem "Templates" [ref=f4e131] [cursor=pointer]
+            - menuitem "Insights" [ref=f4e140] [cursor=pointer]
+            - menuitem "Help" [ref=f4e146] [cursor=pointer]
+            - menuitem "Settings" [ref=f4e154] [cursor=pointer]
+      - main [ref=f4e160]:
+        - generic [ref=f4e165]:
+          - heading "AI Assistant" [level=1] [ref=f4e170]
+          - generic [ref=f4e171]: Preview
+          - generic [ref=f4e172]:
+            - generic [ref=f4e173]: Build and edit workflows through conversation
+            - generic [ref=f4e180]: Debug failed executions and suggest fixes
+            - generic [ref=f4e184]: Ask anything about n8n and get contextual help
+          - generic [ref=f4e190]:
+            - button "Set up" [ref=f4e191] [cursor=pointer]
+            - link "Learn more" [ref=f4e194] [cursor=pointer]:
+              - /url: https://docs.n8n.io/build/ways-of-building-workflows/ai-assistant
+          - button "Turn off for this instance" [ref=f4e198] [cursor=pointer]
+  - complementary

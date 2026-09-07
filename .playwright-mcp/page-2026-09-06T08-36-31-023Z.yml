@@ -1,0 +1,62 @@
+- generic [ref=f5e3]:
+  - main [ref=f5e4]:
+    - generic [ref=f5e5]:
+      - generic [ref=f5e6]:
+        - complementary [ref=f5e7]:
+          - generic [ref=f5e8]:
+            - generic [ref=f5e10]:
+              - menubar [ref=f5e11]:
+                - menuitem [ref=f5e12]:
+                  - button "Add new item" [ref=f5e14] [cursor=pointer]
+              - button "Open command palette" [ref=f5e19] [cursor=pointer]
+              - button "Toggle sidebar" [ref=f5e26] [cursor=pointer]
+            - generic [ref=f5e36]:
+              - menuitem "AI Assistant" [ref=f5e39] [cursor=pointer]
+              - menuitem "Overview" [ref=f5e47] [cursor=pointer]
+            - generic [ref=f5e54]:
+              - menuitem "Templates" [ref=f5e57] [cursor=pointer]
+              - menuitem "Insights" [ref=f5e66] [cursor=pointer]
+              - menuitem "Help" [ref=f5e72] [cursor=pointer]
+              - menuitem "Settings" [ref=f5e80] [cursor=pointer]
+        - main [ref=f5e86]:
+          - generic [ref=f5e89]:
+            - heading "Let's build your first automation" [level=1] [ref=f5e90]
+            - generic [ref=f5e91]: Build a workflow
+      - dialog [ref=f5e213]:
+        - generic [active] [ref=f5e214]:
+          - generic [ref=f5e215]:
+            - heading [level=2]
+          - generic [ref=f5e216]:
+            - generic [ref=f5e218]:
+              - heading "Get paid features for free (forever)" [level=1] [ref=f5e219]
+              - paragraph [ref=f5e220]: Receive a free activation key for the advanced features below - lifetime access.
+              - list [ref=f5e221]:
+                - listitem [ref=f5e222]:
+                  - generic [ref=f5e223]: 🐞
+                  - generic [ref=f5e224]:
+                    - strong [ref=f5e225]: Advanced debugging
+                    - text: Easily fix any workflow execution that’s errored, then re-run it
+                - listitem [ref=f5e226]:
+                  - generic [ref=f5e227]: 🔎
+                  - generic [ref=f5e228]:
+                    - strong [ref=f5e229]: Execution search and tagging
+                    - text: Search and organize past workflow executions for easier review
+                - listitem [ref=f5e230]:
+                  - generic [ref=f5e231]: 📁
+                  - generic [ref=f5e232]:
+                    - strong [ref=f5e233]: Folders
+                    - text: Organize your workflows in a nested folder structure
+              - generic [ref=f5e234]:
+                - generic [ref=f5e239]:
+                  - text: Enter email to receive your license key
+                  - generic [ref=f5e240]: "*"
+                - textbox [ref=f5e244]: admin@projectmonitor.com
+            - generic [ref=f5e245]:
+              - generic [ref=f5e247]:
+                - text: Included features may change, but once unlocked, you'll keep them forever.
+                - link "More info" [ref=f5e248] [cursor=pointer]:
+                  - /url: https://docs.n8n.io/hosting/community-edition-features/#registered-community-edition
+              - generic [ref=f5e249]:
+                - button "Skip" [ref=f5e250] [cursor=pointer]
+                - button "Send me a free license key" [ref=f5e252] [cursor=pointer]
+  - complementary

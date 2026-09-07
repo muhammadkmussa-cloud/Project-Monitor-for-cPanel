@@ -1,0 +1,57 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: Project Monitor
+    - navigation [ref=e8]:
+      - link "Dashboard" [ref=e9] [cursor=pointer]:
+        - /url: /
+      - link "Projects" [ref=e15] [cursor=pointer]:
+        - /url: /projects
+      - link "Incidents" [ref=e18] [cursor=pointer]:
+        - /url: /incidents
+      - link "Analytics" [ref=e21] [cursor=pointer]:
+        - /url: /analytics
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+      - link "Settings" [ref=e30] [cursor=pointer]:
+        - /url: /settings
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: A
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Admin User
+          - paragraph [ref=e40]: admin@monitor.com
+      - button "Logout" [ref=e41] [cursor=pointer]
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - textbox "Search..." [ref=e52]
+      - button "3" [ref=e54] [cursor=pointer]
+    - main [ref=e59]:
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - heading "Projects" [level=1] [ref=e62]
+          - button "Add Project" [ref=e63] [cursor=pointer]
+        - textbox "Search projects..." [ref=e71]
+        - generic [ref=e73]:
+          - generic [ref=e80]:
+            - heading "Halaal Charitable Trust" [level=3] [ref=e81]
+            - paragraph [ref=e82]: halaalcharitabletrust.org
+          - generic [ref=e83]:
+            - generic [ref=e84]: halaalcharitabletrust.org
+            - generic [ref=e88]: php
+          - generic [ref=e91]:
+            - generic [ref=e92]: HEALTHY
+            - button "Details" [ref=e93] [cursor=pointer]
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - heading "Halaal Charitable Trust" [level=3] [ref=e102]
+            - button [ref=e103] [cursor=pointer]
+          - generic [ref=e107]:
+            - button "Health" [ref=e108] [cursor=pointer]
+            - button "Overview" [ref=e111] [cursor=pointer]
+            - button "Server Stats" [ref=e114] [cursor=pointer]
+            - button "SSH Credentials" [ref=e118] [cursor=pointer]
+            - button "Logs" [ref=e122] [cursor=pointer]
+            - button "Errors" [active] [ref=e125] [cursor=pointer]
+          - generic [ref=e157]:
+            - button "Scan for Errors" [ref=e159] [cursor=pointer]
+            - paragraph [ref=e168]: No application errors detected. This site is static HTML (no PHP/error log) or errors have not been logged.

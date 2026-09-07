@@ -1,0 +1,24 @@
+- generic [ref=f5e3]:
+  - main [ref=f5e4]:
+    - generic [ref=f5e6]:
+      - complementary [ref=f5e7]:
+        - generic [ref=f5e8]:
+          - generic [ref=f5e10]:
+            - menubar [ref=f5e11]:
+              - menuitem [ref=f5e12]:
+                - button "Add new item" [ref=f5e14] [cursor=pointer]
+            - button "Open command palette" [ref=f5e19] [cursor=pointer]
+            - button "Toggle sidebar" [ref=f5e26] [cursor=pointer]
+          - generic [ref=f5e36]:
+            - menuitem "AI Assistant" [ref=f5e39] [cursor=pointer]
+            - menuitem "Overview" [ref=f5e47] [cursor=pointer]
+          - generic [ref=f5e54]:
+            - menuitem "Templates" [ref=f5e57] [cursor=pointer]
+            - menuitem "Insights" [ref=f5e66] [cursor=pointer]
+            - menuitem "Help" [ref=f5e72] [cursor=pointer]
+            - menuitem "Settings" [ref=f5e80] [cursor=pointer]
+      - main [ref=f5e86]:
+        - generic [ref=f5e89]:
+          - heading "Let's build your first automation" [level=1] [ref=f5e90]
+          - generic [ref=f5e91]: Build a workflow
+  - complementary

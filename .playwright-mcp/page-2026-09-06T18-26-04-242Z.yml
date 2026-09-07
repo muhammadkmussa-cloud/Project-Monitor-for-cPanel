@@ -1,0 +1,89 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: Project Monitor
+    - navigation [ref=e8]:
+      - link "Dashboard" [ref=e9] [cursor=pointer]:
+        - /url: /
+      - link "Projects" [ref=e15] [cursor=pointer]:
+        - /url: /projects
+      - link "Incidents" [ref=e18] [cursor=pointer]:
+        - /url: /incidents
+      - link "Analytics" [ref=e21] [cursor=pointer]:
+        - /url: /analytics
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+      - link "Settings" [ref=e30] [cursor=pointer]:
+        - /url: /settings
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: A
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Admin User
+          - paragraph [ref=e40]: admin@monitor.com
+      - button "Logout" [ref=e41] [cursor=pointer]
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - textbox "Search..." [ref=e52]
+      - button "3" [ref=e54] [cursor=pointer]
+    - main [ref=e59]:
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - heading "Projects" [level=1] [ref=e62]
+          - button "Add Project" [ref=e63] [cursor=pointer]
+        - textbox "Search projects..." [ref=e71]
+        - generic [ref=e72]:
+          - generic [ref=e175]:
+            - generic [ref=e182]:
+              - heading "Overview Check" [level=3] [ref=e183]
+              - paragraph [ref=e184]: overview.example
+            - generic [ref=e185]:
+              - generic [ref=e186]: overview.example
+              - generic [ref=e190]: laravel
+            - generic [ref=e193]:
+              - generic [ref=e194]: UNKNOWN
+              - button "Details" [active] [ref=e195] [cursor=pointer]
+          - generic [ref=e73]:
+            - generic [ref=e80]:
+              - heading "RBAC Test Project" [level=3] [ref=e81]
+              - paragraph [ref=e82]: test.example
+            - generic [ref=e83]:
+              - generic [ref=e84]: test.example
+              - generic [ref=e88]: php
+            - generic [ref=e91]:
+              - generic [ref=e92]: UNKNOWN
+              - button "Details" [ref=e93] [cursor=pointer]
+          - generic [ref=e97]:
+            - generic [ref=e104]:
+              - heading "Halaal Charitable Trust" [level=3] [ref=e105]
+              - paragraph [ref=e106]: halaalcharitabletrust.org
+            - generic [ref=e107]:
+              - generic [ref=e108]: halaalcharitabletrust.org
+              - generic [ref=e112]: php
+            - generic [ref=e115]:
+              - generic [ref=e116]: HEALTHY
+              - button "Details" [ref=e117] [cursor=pointer]
+        - generic [ref=e202]:
+          - generic [ref=e203]:
+            - heading "Overview Check" [level=3] [ref=e204]
+            - button [ref=e205] [cursor=pointer]
+          - generic [ref=e209]:
+            - button "Health" [ref=e210] [cursor=pointer]
+            - button "Overview" [ref=e213] [cursor=pointer]
+            - button "Server Stats" [ref=e216] [cursor=pointer]
+            - button "SSH Credentials" [ref=e220] [cursor=pointer]
+            - button "Logs" [ref=e224] [cursor=pointer]
+          - generic [ref=e227]:
+            - generic [ref=e228]:
+              - generic [ref=e229]:
+                - generic [ref=e230]: Status
+                - generic [ref=e231]: DOWN
+              - generic [ref=e232]:
+                - generic [ref=e233]: HTTP
+                - generic [ref=e234]: —
+              - generic [ref=e235]:
+                - generic [ref=e236]: Response
+                - generic [ref=e237]: —
+              - generic [ref=e238]:
+                - generic [ref=e239]: SSL
+                - generic [ref=e240]: —
+            - button "Run Health Check" [ref=e241] [cursor=pointer]

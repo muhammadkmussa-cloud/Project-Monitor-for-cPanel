@@ -1,0 +1,124 @@
+- generic:
+  - generic:
+    - generic:
+      - main:
+        - generic:
+          - generic:
+            - complementary [aria-hidden]:
+              - generic:
+                - generic: Settings
+                - generic:
+                  - menuitem [ref=f2e243] [cursor=pointer]:
+                    - generic [ref=f2e20]: Usage and plan
+                  - menuitem [ref=f2e244] [cursor=pointer]:
+                    - generic [ref=f2e30]: Personal
+                  - menuitem [ref=f2e245] [cursor=pointer]:
+                    - generic [ref=f2e39]: Users
+                  - menuitem [ref=f2e246] [cursor=pointer]:
+                    - generic [ref=f2e48]:
+                      - generic [ref=f2e49]: Roles
+                      - generic [ref=f2e50]: New
+                  - menuitem [ref=f2e247] [cursor=pointer]:
+                    - generic [ref=f2e57]: n8n API
+                  - menuitem [ref=f2e248] [cursor=pointer]:
+                    - generic [ref=f2e74]: External Secrets
+                  - menuitem [ref=f2e249] [cursor=pointer]:
+                    - generic [ref=f2e84]: Environments
+                  - menuitem [ref=f2e250] [cursor=pointer]:
+                    - generic [ref=f2e94]: SSO
+                  - menuitem [ref=f2e251] [cursor=pointer]:
+                    - generic [ref=f2e101]: Security & policies
+                  - menuitem [ref=f2e252] [cursor=pointer]:
+                    - generic [ref=f2e112]: LDAP
+                  - menuitem [ref=f2e253] [cursor=pointer]:
+                    - generic [ref=f2e119]: Log Streaming
+                  - menuitem [ref=f2e254] [cursor=pointer]:
+                    - generic [ref=f2e129]: OpenTelemetry
+                  - menuitem [ref=f2e255] [cursor=pointer]:
+                    - generic [ref=f2e138]: Community nodes
+                  - menuitem [ref=f2e256] [cursor=pointer]:
+                    - generic [ref=f2e146]: Instance-level MCP
+                  - menuitem [ref=f2e257] [cursor=pointer]:
+                    - generic [ref=f2e153]:
+                      - generic [ref=f2e154]: Chat
+                      - generic [ref=f2e155]: Preview
+                  - menuitem [ref=f2e258] [cursor=pointer]:
+                    - generic [ref=f2e163]:
+                      - generic [ref=f2e164]: AI Assistant
+                      - generic [ref=f2e165]: Preview
+                - generic: Version 2.35.7
+            - main:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic [aria-hidden]:
+                          - heading [level=1]: API
+                          - paragraph:
+                            - generic:
+                              - generic:
+                                - text: Use your API key to control n8n programmatically. Try it in the
+                                - link:
+                                  - /url: /api/v1/docs
+                                  - text: API playground ↗
+                                - text: ", or use the"
+                                - link:
+                                  - /url: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/
+                                  - text: Webhook node ↗
+                                - text: if you only need to trigger workflows. You can learn more in the
+                                - link:
+                                  - /url: https://docs.n8n.io/api
+                                  - text: documentation ↗
+                                - text: .
+                        - generic:
+                          - generic:
+                            - generic [aria-hidden]:
+                              - tablist:
+                                - tab [selected] [ref=f2e259] [cursor=pointer]:
+                                  - generic [ref=f2e190]: Mine
+                                - tab [ref=f2e260] [cursor=pointer]:
+                                  - generic [ref=f2e194]: All
+                            - generic:
+                              - generic [aria-hidden]:
+                                - generic:
+                                  - textbox:
+                                    - /placeholder: Search
+                              - button "Create API key" [ref=f2e205] [cursor=pointer]
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - table:
+                                    - rowgroup [aria-hidden]:
+                                      - row:
+                                        - columnheader: Name
+                                        - columnheader: Scopes
+                                        - columnheader: Expiration
+                                        - columnheader: Last used
+                                        - columnheader
+                                    - rowgroup:
+                                      - row "Actions":
+                                        - cell [aria-hidden]:
+                                          - generic:
+                                            - generic: opencode
+                                            - generic: "******USig"
+                                        - cell [aria-hidden]:
+                                          - button: "87"
+                                        - cell [aria-hidden]:
+                                          - generic: Never
+                                        - cell [aria-hidden]:
+                                          - generic: 37 minutes ago
+                                        - cell "Actions":
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - button "Actions"
+      - complementary
+  - menu "Actions" [active] [ref=f2e261]:
+    - generic [ref=f2e262]:
+      - menuitem "Edit" [ref=f2e264]
+      - menuitem "Rotate" [ref=f2e272]
+      - generic [ref=f2e280]:
+        - separator [ref=f2e281]
+        - menuitem "Revoke" [ref=f2e282]

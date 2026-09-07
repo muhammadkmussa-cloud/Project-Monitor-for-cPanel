@@ -1,0 +1,40 @@
+- generic [ref=e3]:
+  - main [ref=e4]:
+    - generic [ref=e80]:
+      - complementary [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e84]:
+            - menubar [ref=e85]:
+              - menuitem [ref=e86]:
+                - button "Add new item" [ref=e88] [cursor=pointer]
+            - button "Open command palette" [ref=e93] [cursor=pointer]
+            - button "Toggle sidebar" [ref=e100] [cursor=pointer]
+          - generic [ref=e110]:
+            - menuitem "AI Assistant" [ref=e113] [cursor=pointer]
+            - menuitem "Overview" [ref=e121] [cursor=pointer]
+          - generic [ref=e128]:
+            - menuitem "Templates" [ref=e131] [cursor=pointer]
+            - menuitem "Insights" [ref=e140] [cursor=pointer]
+            - menuitem "Help" [ref=e146] [cursor=pointer]
+            - menuitem "Settings" [ref=e154] [cursor=pointer]
+      - main [ref=e160]:
+        - generic [ref=e163]:
+          - button "Chat history" [ref=e167] [cursor=pointer]
+          - generic [ref=e172]:
+            - heading "What do you want to automate?" [level=1] [ref=e174]
+            - generic [ref=e180]:
+              - generic [ref=e183]:
+                - textbox "Tell me what to build or ask me a question" [active] [ref=e184]
+                - generic [ref=e186]:
+                  - generic [ref=e187]:
+                    - button [ref=e189] [cursor=pointer]
+                    - button [ref=e194] [cursor=pointer]
+                  - button "Send" [disabled] [ref=e201]
+              - generic [ref=e206]:
+                - button "Score my leads" [ref=e207] [cursor=pointer]
+                - button "Process invoices" [ref=e213] [cursor=pointer]
+                - button "Schedule social posts" [ref=e219] [cursor=pointer]
+                - button "Telegram support agent" [ref=e225] [cursor=pointer]
+                - link "See all" [ref=e232] [cursor=pointer]:
+                  - /url: https://n8n.io/workflows/?utm_source=n8n_app&utm_medium=template_library&utm_instance=http%3A%2F%2Flocalhost%3A5678%2F&utm_n8n_version=2.35.7&utm_awc=0&utm_user_role=devops&utm_instance_features=assistant
+  - complementary

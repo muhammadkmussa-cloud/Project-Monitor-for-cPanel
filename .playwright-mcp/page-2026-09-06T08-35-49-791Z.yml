@@ -1,0 +1,41 @@
+- generic [ref=f4e3]:
+  - main [ref=f4e4]:
+    - main [ref=f4e7]:
+      - generic [ref=f4e17]:
+        - generic [ref=f4e18]: Set up owner account
+        - generic [ref=f4e22]:
+          - generic [ref=f4e24]:
+            - generic [ref=f4e29]:
+              - text: Email
+              - generic [ref=f4e30]: "*"
+            - textbox "Email *" [ref=f4e34]:
+              - /placeholder: ""
+              - text: admin@projectmonitor.com
+          - generic [ref=f4e36]:
+            - generic [ref=f4e41]:
+              - text: First Name
+              - generic [ref=f4e42]: "*"
+            - textbox "First Name *" [ref=f4e46]:
+              - /placeholder: ""
+              - text: Admin
+          - generic [ref=f4e48]:
+            - generic [ref=f4e53]:
+              - text: Last Name
+              - generic [ref=f4e54]: "*"
+            - textbox "Last Name *" [ref=f4e58]:
+              - /placeholder: ""
+              - text: User
+          - generic [ref=f4e60]:
+            - generic [ref=f4e65]:
+              - text: Password
+              - generic [ref=f4e66]: "*"
+            - textbox "Password *" [ref=f4e70]:
+              - /placeholder: ""
+              - text: Admin123!
+            - generic [ref=f4e71]: 8+ characters, at least 1 number and 1 capital letter
+          - generic [ref=f4e73] [cursor=pointer]:
+            - checkbox "I want to receive security and product updates" [ref=f4e74]
+            - generic [ref=f4e75]: I want to receive security and product updates
+        - generic [ref=f4e76]:
+          - button "Next" [disabled]
+  - complementary
