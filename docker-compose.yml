@@ -88,7 +88,7 @@ services:
       API_SECRET_KEY: ${API_SECRET_KEY:?Set API_SECRET_KEY}
     volumes:
       - backups:/app/backups
-      - /home/muhammad-mussa/.ssh:/keys:ro
+      - ${HOME}/.ssh:/keys:ro
     depends_on:
       postgres:
         condition: service_healthy
