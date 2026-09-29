@@ -1,5 +1,9 @@
 # Project Monitor
 
+https://github.com/user-attachments/assets/1f5a13db-0da5-45c8-83d5-f015f6320624
+
+![Project Monitor project film](./project-monitor-film-poster.webp)
+
 AI-powered multi-project website and application monitoring platform.
 
 ## Overview
@@ -95,3 +99,4 @@ crontab -e
 ## License
 
 Internal use only.
+
