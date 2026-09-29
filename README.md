@@ -2,7 +2,7 @@
 
 https://github.com/user-attachments/assets/1f5a13db-0da5-45c8-83d5-f015f6320624
 
-![Project Monitor project film](./project-monitor-film-poster.webp)
+[![Project Monitor project film](./project-monitor-film-poster.webp)](https://github.com/user-attachments/assets/1f5a13db-0da5-45c8-83d5-f015f6320624)
 
 AI-powered multi-project website and application monitoring platform.
 
